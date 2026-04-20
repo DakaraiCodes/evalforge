@@ -15,17 +15,18 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="EvalForge API")
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://evalforge.vercel.app",
         "http://localhost:5173",
         "http://localhost:5174",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5174",
-        "https://evalforge.vercel.app",
-        "https://evalforge-j67a25p0q-dakaraicodes-projects.vercel.app",
-        "https://evalforge-qdohpnc69-dakaraicodes-projects.vercel.app",
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
