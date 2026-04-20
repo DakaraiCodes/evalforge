@@ -26,6 +26,7 @@ const SCORE_FIELDS = [
 ]
 
 function App() {
+  console.log('API_BASE_URL:', API_BASE_URL)
   const [prompt, setPrompt] = useState('')
   const [selectedModels, setSelectedModels] = useState([
     'gpt-4.1-mini',
