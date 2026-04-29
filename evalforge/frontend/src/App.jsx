@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
-const API_BASE_URL = 'https://evalforge-backend.onrender.com'
+const API_BASE_URL = 'https://evalforge.onrender.com'
 console.log('API_BASE_URL:', API_BASE_URL)
 
 const AVAILABLE_MODELS = [
