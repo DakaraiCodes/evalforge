@@ -97,6 +97,9 @@ def health_check():
         "openai_configured": bool(OPENAI_API_KEY),
     }
 
+@app.get("/render-test")
+def render_test():
+    return {"message": "render backend is using the correct app"}
 
 @app.post("/run")
 def run_prompt(data: PromptRequest):
