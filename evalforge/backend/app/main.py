@@ -33,7 +33,7 @@ app.add_middleware(
 )
 # Read the API key only on the backend.
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-openai_client = OpenAI() if OPENAI_API_KEY else None
+openai_client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 # Only these models will use the real OpenAI API in Step 9A.
 OPENAI_MODELS = {"gpt-4.1-mini", "gpt-4.1"}
@@ -101,7 +101,6 @@ def health_check():
 def render_test():
     return {"message": "render backend is using the correct app"}
 
-import os
 
 @app.get("/env-debug")
 def env_debug():
