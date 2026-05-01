@@ -101,15 +101,6 @@ def health_check():
 def render_test():
     return {"message": "render backend is using the correct app"}
 
-
-@app.get("/env-debug")
-def env_debug():
-    return {
-        "openai_key_present": "OPENAI_API_KEY" in os.environ,
-        "openai_key_length": len(os.environ.get("OPENAI_API_KEY", "")),
-        "database_url_present": "DATABASE_URL" in os.environ,
-    }
-
 @app.post("/run")
 def run_prompt(data: PromptRequest):
     results = []

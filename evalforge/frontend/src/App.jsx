@@ -27,8 +27,6 @@ const SCORE_FIELDS = [
 ]
 
 function App() {
-  console.log('DEPLOY CHECK LIVE 999')
-  console.log('API_BASE_URL:', API_BASE_URL)
   const [prompt, setPrompt] = useState('')
   const [selectedModels, setSelectedModels] = useState([
     'gpt-4.1-mini',
@@ -831,4 +829,3 @@ function App() {
 }
 
 export default App
-console.log('DEPLOY CHECK 123')
